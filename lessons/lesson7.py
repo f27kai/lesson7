@@ -24,9 +24,13 @@ bitday DATE
 cursor.execute('''UPDATE user SET age=99 WHERE rowid!=2 ''')
 
 
+# Delete
+cursor.execute(""" DELETE FROM user WHERE rowid % 2 == 0 """)
+
+
 
 # REED-SELECT,fech
-cursor.execute('''SELECT rowid,* FROM user''')
+cursor.execute('''SELECT rowid, * FROM user''')
 a=cursor.fetchall()
 for i in a:
     print(i)
